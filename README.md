@@ -1,30 +1,126 @@
-# Simple Notes App for TWS Community
-This is a simple notes app built with React and Django.
+# Django Notes App with Docker & CI/CD
 
-## Requirements
-1. Python 3.9
-2. Node.js
-3. React
+A simple **Notes Application** built using **Django** for the backend and **React** for the frontend. This project demonstrates containerization with **Docker** and is suitable for learning deployment and CI/CD workflows.
 
-## Installation
-1. Clone the repository
+---
+
+## Features
+
+* Create, update, and delete notes
+* React frontend
+* Django REST backend
+* Dockerized application
+* Ready for CI/CD integration
+* Nginx support for reverse proxy
+
+---
+
+## Tech Stack
+
+* Python 3.9+
+* Django
+* React
+* Docker
+* Docker Compose
+* Nginx
+
+---
+
+## Prerequisites
+
+Make sure the following are installed on your system:
+
+* Python 3.9 or later
+* Node.js
+* Docker
+* Docker Compose
+* Git
+
+---
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/Neeraj-Parihar/django-notes-App-CICD.git
+cd django-notes-App-CICD
 ```
-git clone https://github.com/LondheShubham153/django-notes-app.git
+
+---
+
+## Build the Docker Image
+
+```bash
+docker build -t django-notes-app .
 ```
 
-2. Build the app
-```
-docker build -t notes-app .
-```
+---
 
-3. Run the app
-```
-docker run -d -p 8000:8000 notes-app:latest
+## Run the Application
+
+```bash
+docker run -d -p 8000:8000 django-notes-app
 ```
 
-## Nginx
+The application will be available at:
 
-Install Nginx reverse proxy to make this application available
+```
+http://localhost:8000
+```
 
-`sudo apt-get update`
-`sudo apt install nginx`
+---
+
+## Using Docker Compose
+
+Start all services:
+
+```bash
+docker compose up --build
+```
+
+Run in detached mode:
+
+```bash
+docker compose up -d
+```
+
+Stop the services:
+
+```bash
+docker compose down
+```
+
+---
+
+## Nginx Reverse Proxy
+
+Install Nginx:
+
+```bash
+sudo apt update
+sudo apt install nginx
+```
+
+Configure Nginx as a reverse proxy to expose the Django application on ports 80 or 443.
+
+---
+
+## Project Structure
+
+```
+django-notes-App-CICD/
+├── backend/
+├── frontend/
+├── docker-compose.yml
+├── Dockerfile
+├── nginx/
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Author
+
+**Neeraj Parihar**
+
+GitHub: https://github.com/Neeraj-Parihar
